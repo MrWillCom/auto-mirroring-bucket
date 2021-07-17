@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dugite": "^1.103.0",
+    "progress": "^2.0.3"
+  }
+}
