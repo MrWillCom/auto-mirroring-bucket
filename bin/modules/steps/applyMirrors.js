@@ -3,13 +3,13 @@ const writeFile = require('../utilities/writeFile')
 const replaceAll = require('../utilities/replaceAll')
 const scanDirectory = require('../utilities/scanDirectory')
 const ProgressBar = require('progress');
+const __ = require('../utilities/addSpacesToString')(require('../../config').progressBarTrailingLength)
 
-const BUCKET_PATH = './bucket/'
 const MIRRORS = require('../../config').mirrors
 
 const applyMirrors = () => {
-    scanDirectory(BUCKET_PATH).then((files) => {
-        const bar = new ProgressBar(`Applying mirrors [:bar]`, { total: files.length });
+    scanDirectory('./bucket/').then((files) => {
+        const bar = new ProgressBar(`${__('Applying mirrors')}[:bar]`, { total: files.length });
         for (const file of files) {
             readFile(file, 'utf8').then((content) => {
                 for (const source in MIRRORS) {
