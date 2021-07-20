@@ -1,6 +1,6 @@
 # Auto Mirroring Bucket
 
-This is a automated scoop bucket powered by Node.js.
+This is an automatic Scoop bucket powered by Node.js.
 
 ## What is this?
 
